@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+  <title>映画情報検索画面</title>
+</head>
+<body>
+<h1>映画情報検索</h1>
+<form action="film_info_search_result" method="post">
+  @csrf
+<input class="input" type="text" name="send" placeholder="映画のタイトルを入力" autocomplete="off">
+<input class="button" type="submit" value="検索">
+</form>
+</body>
+</html>
