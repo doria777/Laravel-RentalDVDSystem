@@ -16,7 +16,7 @@
   <tr>
     <td>{{$result->title}}</td>
     <td>{{$result->description}}</td>
-    <td>{{$result->category}}</td>
+    <td>{{$result->name}}</td>
     <td>{{$result->first_name}}</td>
     <td>{{$result->last_name}}</td>
   </tr>

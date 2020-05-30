@@ -88,4 +88,4 @@ Route::get('film_info_search' , 'FilmInfoSearchController@index');
 
 // 映画情報検索結果画面
 
-Route::post('film_info_search_result' , 'FilmInfoSearchController@result');
+Route::get('film_info_search_result' , 'FilmInfoSearchController@result');
