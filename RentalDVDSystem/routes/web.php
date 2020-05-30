@@ -89,6 +89,12 @@ Route::get('film_info_search' , 'FilmInfoSearchController@index');
 // 映画情報検索結果画面
 
 Route::get('film_info_search_result' , 'FilmInfoSearchController@result');
+Route::get('film_info_search' , 'FilmInfoSearchController@film_info_search_back');
+
+// 映画情報から顧客情報へ
+
+Route::get('customer_info_search' , 'FilmInfoSearchController@film_info_search_move_customer_info_search');
+
 
 // 顧客情報検索画面
 
@@ -97,3 +103,7 @@ Route::get('customer_info_search' , 'CustomerInfoSearchController@index');
 // 顧客情報検索結果画面
 
 Route::get('customer_info_search_result' , 'CustomerInfoSearchController@result');
+Route::get('customer_info_search' , 'CustomerInfoSearchController@customer_info_search_back');
+
+// 顧客情報から映画情報へ
+Route::get('film_info_search' , 'CustomerInfoSearchController@customer_info_search_move_film_info_search');

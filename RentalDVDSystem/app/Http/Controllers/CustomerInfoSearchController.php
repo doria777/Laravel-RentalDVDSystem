@@ -31,4 +31,13 @@ class CustomerInfoSearchController extends Controller
 
         return view('customer_info_search.result' , compact('results'));
     }
+
+    function customer_info_search_back(){
+        return view('customer_info_search.index');
+    }
+
+    public function customer_info_search_move_film_info_search(){
+        return view('film_info_search.index');
+
+    }
 }
