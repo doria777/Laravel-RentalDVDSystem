@@ -89,3 +89,11 @@ Route::get('film_info_search' , 'FilmInfoSearchController@index');
 // 映画情報検索結果画面
 
 Route::get('film_info_search_result' , 'FilmInfoSearchController@result');
+
+// 顧客情報検索画面
+
+Route::get('customer_info_search' , 'CustomerInfoSearchController@index');
+
+// 顧客情報検索結果画面
+
+Route::get('customer_info_search_result' , 'CustomerInfoSearchController@result');
