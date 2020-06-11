@@ -16,5 +16,10 @@
         @csrf
         <input class="button" type="submit" value="映画情報検索画面">
       </form>
+
+      <form action="dashboard" method="get">
+        @csrf
+        <input class="button" type="submit" value="ダッシュボード">
+      </form>
   </body>
 </html>

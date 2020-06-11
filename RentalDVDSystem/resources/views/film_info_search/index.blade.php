@@ -16,5 +16,10 @@
         <input class="button" type="submit" value="顧客情報検索画面">
       </form>
 
+      <form action="dashboard" method="get">
+        @csrf
+        <input class="button" type="submit" value="ダッシュボード">
+      </form>
+
   </body>
 </html>
