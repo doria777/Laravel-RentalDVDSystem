@@ -30,25 +30,25 @@
     -->
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="http://www.creative-tim.com" class="simple-text">
+                    <a href="{{route('dashboard.index')}}" class="simple-text">
                         Laravel RentalDVDSystems
                     </a>
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{url('/dashboard')}}">
+                        <a class="nav-link" href="{{route('dashboard.index')}}">
                             <i class="fas fa-chart-pie fa-xs"></i>
                             <p>ダッシュボード</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="{{url('/film_info_search')}}">
+                        <a class="nav-link" href="{{route('film_info_search.index')}}">
                             <i class="fas fa-film fa-xs"></i>
                             <p>映画情報検索</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="{{url('/customer_info_search')}}">
+                        <a class="nav-link" href="{{route('customer_info_search.index')}}">
                             <i class="fas fa-users fa-xs"></i>
                             <p>顧客情報検索</p>
                         </a>
@@ -164,9 +164,9 @@
             <!-- End Navbar -->
 
             <div class="content">
-              <div class="container-fluid">
+                <div class="container-fluid">
 
-                <!-- 上段 -->
+                    <!-- 上段 -->
                     <!-- <div class="row"> -->
 
                     <!-- 上段左 -->
@@ -218,10 +218,55 @@
                         </div>
                     </div> -->
 
-                    <!-- 下段 -->
-
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
+                            <div class="card ">
+                                <div class="card-header ">
+                                    <h4 class="card-title">映画情報検索結果</h4>
+                                    <!-- <p class="card-category">All products including Taxes</p> -->
+                                </div>
+                                <div class="card-body ">
+                                    <div class="card strpied-tabled-with-hover">
+                                        <div class="card-body table-full-width table-responsive">
+                                            <table class="table table-hover table-striped">
+                                                    <div class="css-test">
+                                                        <tr>
+                                                            <th>タイトル</th>
+                                                            <th>説明</th>
+                                                            <th>カテゴリ</th>
+                                                            <th>役者（名）</th>
+                                                            <th>役者（姓）</th>
+                                                        </tr>
+                                                    </div>
+                                                @foreach ($film_info_search_results as $film_info_search_result)
+                                                @if($loop->iteration < 6)
+                                                <tr>
+                                                    <td>{{$film_info_search_result->title}}</td>
+                                                    <td>{{$film_info_search_result->description}}</td>
+                                                    <td>{{$film_info_search_result->name}}</td>
+                                                    <td>{{$film_info_search_result->first_name}}</td>
+                                                    <td>{{$film_info_search_result->last_name}}</td>
+                                                </tr>
+                                                @endif
+                                                @endforeach
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer ">
+                                    <!-- <div class="legend">
+                                        <i class="fa fa-circle text-info"></i> Tesla Model S
+                                        <i class="fa fa-circle text-danger"></i> BMW 5 Series
+                                    </div> -->
+                                    <!-- <hr> -->
+                                    <!-- <div class="stats">
+                                        <i class="fa fa-check"></i> Data information certified
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- <div class="col-md-6">
                             <div class="card ">
                                 <div class="card-header ">
                                     <h4 class="card-title">2017 Sales</h4>
@@ -241,141 +286,52 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
+                        </div> -->
+                    <!-- 下段右 -->
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="card  card-tasks">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Tasks</h4>
-                                    <p class="card-category">Backend development</p>
+                                    <h4 class="card-title">顧客情報検索結果</h4>
+                                    <!-- <p class="card-category">Backend development</p> -->
                                 </div>
                                 <div class="card-body ">
-                                    <div class="table-full-width">
-                                        <table class="table">
-                                            <tbody>
+                                    <div class="card strpied-tabled-with-hover">
+                                        <div class="card-body table-full-width table-responsive">
+                                            <table class="table table-hover table-striped">
                                                 <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="">
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
+                                                    <th>顧客ID</th>
+                                                    <th>顧客（名）</th>
+                                                    <th>顧客（姓）</th>
+                                                    <th>Eメール</th>
+                                                    <th>国</th>
+                                                    <th>都市</th>
+                                                    <th>住所1</th>
+                                                    <th>住所2</th>
                                                 </tr>
+                                                @foreach ($customer_info_search_results as $customer_info_search_result)
+                                                @if($loop->iteration < 6)
                                                 <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="" checked>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
+                                                    <td>{{$customer_info_search_result->customer_id}}</td>
+                                                    <td>{{$customer_info_search_result->first_name}}</td>
+                                                    <td>{{$customer_info_search_result->last_name}}</td>
+                                                    <td>{{$customer_info_search_result->email}}</td>
+                                                    <td>{{$customer_info_search_result->country}}</td>
+                                                    <td>{{$customer_info_search_result->city}}</td>
+                                                    <td>{{$customer_info_search_result->address}}</td>
+                                                    <td>{{$customer_info_search_result->address2}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="" checked>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                                                    </td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" checked>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="">
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Read "Following makes Medium better"</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="" disabled>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Unfollow 5 enemies from twitter</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                                @endif
+                                                @endforeach
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="card-footer ">
-                                    <hr>
+                                    <!-- <hr>
                                     <div class="stats">
                                         <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

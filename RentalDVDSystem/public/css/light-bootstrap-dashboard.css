@@ -535,7 +535,7 @@ body>.navbar-collapse .logo p {
 
 .sidebar .logo .simple-text,
 body>.navbar-collapse .logo .simple-text {
-    text-transform: uppercase;
+    text-transform:capitalize;
     padding: 5px 0px;
     display: block;
     font-size: 18px;
@@ -2966,7 +2966,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card-stats .card-body .numbers {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     text-align: right;
 }
 
@@ -5309,5 +5309,7 @@ License - nucleoapp.com/license/
 .nc-zoom-split::before {
     content: "\ea64";
 }
+
+.css-test tr th{font-size:12px;}
 
 /* all icon font classes list here */

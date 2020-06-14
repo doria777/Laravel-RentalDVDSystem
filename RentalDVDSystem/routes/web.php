@@ -84,7 +84,7 @@ Route::get('store' , 'StoreController@index');
 
 // 映画情報検索画面
 
-Route::get('film_info_search' , 'FilmInfoSearchController@index');
+Route::get('film_info_search' , 'FilmInfoSearchController@index')->name('film_info_search.index');
 
 // 映画情報検索結果画面
 
@@ -98,7 +98,7 @@ Route::get('film_info_search_result' , 'FilmInfoSearchController@result');
 
 // 顧客情報検索画面
 
-Route::get('customer_info_search' , 'CustomerInfoSearchController@index');
+Route::get('customer_info_search' , 'CustomerInfoSearchController@index')->name('customer_info_search.index');;
 
 // 顧客情報検索結果画面
 
@@ -110,4 +110,4 @@ Route::get('customer_info_search_result' , 'CustomerInfoSearchController@result'
 // Route::get('film_info_search' , 'CustomerInfoSearchController@customer_info_search_move_film_info_search');
 
 // ダッシュボードページ表示
-Route::get('dashboard' , 'DashboardController@index');
+Route::get('dashboard' , 'DashboardController@index')->name('dashboard.index');

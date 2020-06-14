@@ -42,12 +42,12 @@ class FilmInfoSearchController extends Controller
         return view('film_info_search.result' , compact('results'));
     }
 
-    public function film_info_search_back(){
-        return view('film_info_search.index');
-    }
+    // public function film_info_search_back(){
+    //     return view('film_info_search.index');
+    // }
 
-    public function film_info_search_move_customer_info_search(){
-        return view('customer_info_search.index');
+    // public function film_info_search_move_customer_info_search(){
+    //     return view('customer_info_search.index');
 
-    }
+    // }
 }
