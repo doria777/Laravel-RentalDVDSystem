@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
     <link rel="icon" type="image/png" href="{{asset('img/favicon.ico')}}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Laravel RentalDVDSystem Dashboard</title>
+    <title>@yield('title')</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -19,8 +19,9 @@
     <link rel="stylesheet" href="{{ asset('css/demo.css') }}"/>
 </head>
 
-
 <body>
+    <!-- Sidebar -->
+
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="{{asset('img/sidebar-5.jpg  ')}}">
             <!--
@@ -56,6 +57,8 @@
                 </ul>
             </div>
         </div>
+        <!-- End Sidebar  -->
+
         <div class="main-panel">
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
@@ -128,91 +131,15 @@
             </nav>
             <!-- End Navbar -->
 
-            <div class="content">
-                <div class="container-fluid">
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">映画情報検索結果</h4>
-                                </div>
-                                <div class="card-body ">
-                                    <div class="card strpied-tabled-with-hover">
-                                        <div class="card-body table-full-width table-responsive">
-                                            <table class="table table-hover table-striped">
-                                            <thead>
-                                                <th>タイトル</th>
-                                                <th>説明</th>
-                                                <th>カテゴリ</th>
-                                                <th>役者（名）</th>
-                                                <th>役者（姓）</th>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($film_info_search_results as $film_info_search_result)
-                                                @if($loop->iteration < 6)
-                                                <tr>
-                                                <td>{{$film_info_search_result->title}}</td>
-                                                <td>{{$film_info_search_result->description}}</td>
-                                                <td>{{$film_info_search_result->name}}</td>
-                                                <td>{{$film_info_search_result->first_name}}</td>
-                                                <td>{{$film_info_search_result->last_name}}</td>
-                                                </tr>
-                                                @endif
-                                                @endforeach
-                                            </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card  card-tasks">
-                                <div class="card-header ">
-                                    <h4 class="card-title">顧客情報検索結果</h4>
-                                </div>
-                                <div class="card-body ">
-                                    <div class="card strpied-tabled-with-hover">
-                                        <div class="card-body table-full-width table-responsive">
-                                            <table class="table table-hover table-striped">
-                                            <thead>
-                                                    <th>顧客ID</th>
-                                                    <th>顧客（名）</th>
-                                                    <th>顧客（姓）</th>
-                                                    <th>Eメール</th>
-                                                    <th>国</th>
-                                                    <th>都市</th>
-                                                    <th>住所1</th>
-                                                    <th>住所2</th>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($customer_info_search_results as $customer_info_search_result)
-                                                @if($loop->iteration < 6)
-                                                <tr>
-                                                    <td>{{$customer_info_search_result->customer_id}}</td>
-                                                    <td>{{$customer_info_search_result->first_name}}</td>
-                                                    <td>{{$customer_info_search_result->last_name}}</td>
-                                                    <td>{{$customer_info_search_result->email}}</td>
-                                                    <td>{{$customer_info_search_result->country}}</td>
-                                                    <td>{{$customer_info_search_result->city}}</td>
-                                                    <td>{{$customer_info_search_result->address}}</td>
-                                                    <td>{{$customer_info_search_result->address2}}</td>
-                                                </tr>
-                                                @endif
-                                                @endforeach
-                                            </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Main content -->
+
+            @yield('content')
+
+            <!-- End Main content -->
+
+            <!-- Footer -->
+
             <footer class="footer">
                 <div class="container-fluid">
                     <nav>
@@ -248,6 +175,7 @@
                     </nav>
                 </div>
             </footer>
+            <!-- End Footer -->
         </div>
     </div>
 

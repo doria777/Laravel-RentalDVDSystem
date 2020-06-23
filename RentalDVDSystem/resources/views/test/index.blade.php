@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title' , '映画情報検索結果')
+@section('title' , '共通テストページ')
 
 @section('content')
     <div class="content">

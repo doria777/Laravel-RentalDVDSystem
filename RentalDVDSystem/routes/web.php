@@ -111,3 +111,7 @@ Route::get('customer_info_search_result' , 'CustomerInfoSearchController@result'
 
 // ダッシュボードページ表示
 Route::get('dashboard' , 'DashboardController@index')->name('dashboard.index');
+
+Route::get('test' , function(){
+    return view('test.index');
+});
