@@ -229,23 +229,25 @@
                                     <div class="card strpied-tabled-with-hover">
                                         <div class="card-body table-full-width table-responsive">
                                           <table class="table table-hover table-striped">
-                                            <tr>
+                                            <thead>
                                               <th>タイトル</th>
                                               <th>説明</th>
                                               <th>カテゴリ</th>
                                               <th>役者（名）</th>
                                               <th>役者（姓）</th>
-                                            </tr>
-                                            @foreach ($results as $result)
-                                            <tr>
+                                            </thead>
+                                            <tbody>
+                                              @foreach ($results as $result)
+                                              <tr>
                                               <td>{{$result->title}}</td>
                                               <td>{{$result->description}}</td>
                                               <td>{{$result->name}}</td>
                                               <td>{{$result->first_name}}</td>
                                               <td>{{$result->last_name}}</td>
                                             </tr>
-                                            @endforeach
-                                          </table>
+                                              @endforeach
+                                            </tbody>
+                                           </table>
 
                                           <form action="film_info_search" method="get">
                                             @csrf
@@ -256,8 +258,7 @@
                                             @csrf
                                             <input class="button" type="submit" value="顧客情報検索画面">
                                           </form>
-
-                                        {!! $results->links() !!}
+                                          {!! $results->links() !!}
                                         </div>
                                     </div>
                                 </div>
