@@ -2,6 +2,10 @@
 
 @section('title' , 'ダッシュボード')
 
+@include('layouts.sidebar')
+
+@include('layouts.header')
+
 @section('content')
 <div class="content">
                 <div class="container-fluid">
@@ -90,3 +94,5 @@
             </div>
 
 @endsection
+
+@include('layouts.footer')

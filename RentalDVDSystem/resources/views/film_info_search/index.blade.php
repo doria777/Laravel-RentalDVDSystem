@@ -2,6 +2,10 @@
 
 @section('title' , '映画情報検索')
 
+@include('layouts.sidebar')
+
+@include('layouts.header')
+
 @section('content')
     <div class="content">
         <div class="container-fluid">
@@ -38,3 +42,5 @@
         </div>
     </div>
 @endsection
+
+@include('layouts.footer')
