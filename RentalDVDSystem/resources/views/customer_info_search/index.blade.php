@@ -6,7 +6,6 @@
 
 @include('layouts.header')
 
-
 @section('content')
     <div class="content">
         <div class="container-fluid">
@@ -42,6 +41,6 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection
 
-    @include('layouts.footer')
+@include('layouts.footer')

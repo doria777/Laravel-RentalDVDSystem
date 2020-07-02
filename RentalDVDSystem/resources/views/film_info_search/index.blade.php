@@ -19,19 +19,19 @@
                             <div class="card strpied-tabled-with-hover">
                                 <div class="card-body table-full-width table-responsive">
                                     <form action="film_info_search_result" method="get">
-                                    @csrf
-                                    <input class="input" type="text" name="title" placeholder="映画のタイトルを入力" autocomplete="off">
-                                    <input class="button" type="submit" value="検索">
+                                        @csrf
+                                        <input class="input" type="text" name="title" placeholder="映画のタイトルを入力" autocomplete="off">
+                                        <input class="button" type="submit" value="検索">
                                     </form>
 
                                     <form action="customer_info_search" method="get">
-                                    @csrf
-                                    <input class="button" type="submit" value="顧客情報検索画面">
+                                        @csrf
+                                        <input class="button" type="submit" value="顧客情報検索画面">
                                     </form>
 
                                     <form action="dashboard" method="get">
-                                    @csrf
-                                    <input class="button" type="submit" value="ダッシュボード">
+                                        @csrf
+                                        <input class="button" type="submit" value="ダッシュボード">
                                     </form>
                                 </div>
                             </div>
